@@ -12,6 +12,16 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "PageDown with window centering
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Search backward with window centering" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Search forward with window centering" })
 
+-- Switch splits
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Switch to right split' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Switch to left split' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Switch to upper split' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Switch to lower split' })
+
+-- Switch buffers
+vim.keymap.set('n', '<S-l>', '<CMD>bnext<CR>', { desc = 'Switch to the next buffer' })
+vim.keymap.set('n', '<S-h>', '<CMD>bprev<CR>', { desc = 'Switch to the previous buffer' })
+
 -- Open Explorer
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Open Explorer" })
 
