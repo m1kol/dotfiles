@@ -6,12 +6,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Page Up/Down centering
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "PageUp with window centering" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "PageDown with window centering" })
-vim.keymap.set("n", "N", "Nzzzv", { desc = "Search backward with window centering" })
-vim.keymap.set("n", "n", "nzzzv", { desc = "Search forward with window centering" })
-
 -- Switch splits
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Switch to right split' })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Switch to left split' })
@@ -22,6 +16,12 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Switch to lower split' })
 vim.keymap.set('n', '<S-l>', '<CMD>bnext<CR>', { desc = 'Switch to the next buffer' })
 vim.keymap.set('n', '<S-h>', '<CMD>bprev<CR>', { desc = 'Switch to the previous buffer' })
 
+-- Page Up/Down centering
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "PageUp with window centering" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "PageDown with window centering" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Search backward with window centering" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Search forward with window centering" })
+
 -- Open Explorer
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Open Explorer" })
 
@@ -31,6 +31,9 @@ vim.keymap.set("n", "<leader>nhl", vim.cmd.nohlsearch, { desc = "Clear search hi
 -- Copy to system clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+-- Clear search highlighting
+vim.keymap.set("n", "<leader>bd", vim.cmd.bdelete, { desc = "Delete current buffer (bdelete)" })
 
 -- Telescope options
 -- See `:help telescope.builtin`
